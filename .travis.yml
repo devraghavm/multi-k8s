@@ -20,3 +20,16 @@ after_success:
   - docker push devraghavm/multi-nginx
   - docker push devraghavm/multi-server
   - docker push devraghavm/multi-worker
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-1-851534334683
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECERT_KEY
