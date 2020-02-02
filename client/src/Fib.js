@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class Fib extends Component {
+class Fib extends Component {
   state = {
     seenIndexes: [],
     values: {},
@@ -32,7 +32,7 @@ export default class Fib extends Component {
       index: this.state.index
     });
     this.setState({ index: '' });
-  }
+  };
 
   renderSeenIndexes() {
     return this.state.seenIndexes.map(({ number }) => number).join(', ');
@@ -41,13 +41,14 @@ export default class Fib extends Component {
   renderValues() {
     const entries = [];
 
-    for(let key in this.state.values) {
+    for (let key in this.state.values) {
       entries.push(
         <div key={key}>
           For index {key} I calculated {this.state.values[key]}
         </div>
       );
     }
+
     return entries;
   }
 
@@ -66,10 +67,11 @@ export default class Fib extends Component {
         <h3>Indexes I have seen:</h3>
         {this.renderSeenIndexes()}
 
-
         <h3>Calculated Values:</h3>
         {this.renderValues()}
       </div>
     );
   }
 }
+
+export default Fib;
