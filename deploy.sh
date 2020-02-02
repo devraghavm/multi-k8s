@@ -6,7 +6,7 @@ docker push devraghavm/mulit-server:latest
 docker push devraghavm/multi-worker:latest
 
 docker push devraghavm/multi-client:$SHA
-docker push devraghavm/mulit-server:$SHA
+docker push devraghavm/multi-server:$SHA
 docker push devraghavm/multi-worker:$SHA
 
 kubectl apply -f k8s
